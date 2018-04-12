@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Blueprint</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"> <!-- character encoding -->
+        <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"> <!-- Display webpage in edge mode/IE in highest supported document mode -->
+        <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Optimizations for mobile devices -->
+
+        <!-- Google fonts -->
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+        <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"</script>
+        <![endif]-->
+    </head>
+
+    <body>
+                
+       
+        <!-- Jquery first, then JavaScript -->
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+        
+           var jsonData = '{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":300,"main":"Drizzle","description":"light intensity drizzle","icon":"09d"}],"base":"stations","main":{"temp":280.32,"pressure":1012,"humidity":81,"temp_min":279.15,"temp_max":281.15},"visibility":10000,"wind":{"speed":4.1,"deg":80},"clouds":{"all":90},"dt":1485789600,"sys":{"type":1,"id":5091,"message":0.0103,"country":"GB","sunrise":1485762037,"sunset":1485794875},"id":2643743,"name":"London","cod":200}';
+           var jsObject = JSON.parse(jsonData);
+            // using both dot notation and bracket notation
+            //document.write(jsObject.coord.lon);
+            document.write(jsObject["coord"]["lon"]);
+            
+            //document.write("<br>", jsObject.coord.lat);
+            document.write("<br>", jsObject["coord"]["lat"]);
+            
+           // document.write("<br>", jsObject.weather[0].description);
+            document.write("<br>", jsObject.weather[0]["description"]);
+            
+           // document.write("<br>", jsObject.main.pressure);
+            document.write("<br>", jsObject["main"]["pressure"]);
+            
+            
+            var jsonData2 = '{"person": {"1": "Timmy Turner", "2": "Tina Turner"}}';
+            var jsonData3 = '{"1":"scooby doo", "2": "mojo jojo"}';
+            
+            var jsObject2 = JSON.parse(jsonData2);
+            var jsObject3 = JSON.parse(jsonData3);
+            document.write("<br>", jsObject2.person[1]);
+            document.write("<br>", jsObject3[2]);
+
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
